@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Happy Valentine's Day Elzy🩵</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    background: linear-gradient(to bottom, #87CEEB, #b3e5fc);
+    overflow-x: hidden;
+    color: white;
+}
+
+.container {
+    padding: 80px 20px;
+}
+
+h1 {
+    font-size: 3em;
+}
+
+button {
+    margin-top: 30px;
+    padding: 15px 35px;
+    font-size: 1.2em;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    background: white;
+    color: #2196F3;
+    font-weight: bold;
+}
+
+#letter {
+    display: none;
+    max-width: 800px;
+    margin: 40px auto;
+    text-align: left;
+    background: rgba(255,255,255,0.15);
+    padding: 30px;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    line-height: 1.6;
+}
+
+.confetti, .heart, .balloon {
+    position: fixed;
+    top: -10px;
+    animation: fall linear forwards;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(110vh);
+    }
+}
+
+.flower {
+    font-size: 120px;
+    cursor: pointer;
+    margin-top: 40px;
+    transition: transform 0.3s;
+}
+
+.bounce {
+    animation: bounce 1s ease;
+}
+
+@keyframes bounce {
+    0% { transform: translateY(0); }
+    30% { transform: translateY(-80px); }
+    50% { transform: translateY(0); }
+    70% { transform: translateY(-40px); }
+    100% { transform: translateY(0); }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <h1>Happy Valentine's Day Elzy🩵</h1>
+
+    <button onclick="surprise()">Click Me 💌</button>
+
+    <div id="letter">
+        <p><strong>My Dearest Love,</strong></p>
+
+        <p>Happy Valentine’s Day, my heart.</p>
+
+        <p>Even though we’re miles apart, there was never a day far from you, but rather, I feel you closer than ever. Every message, every call, every little moment we share reminds me that love doesn’t need proximity, it only needs hearts that truly care. And mine has never cared for anyone the way it cares for you.</p>
+
+        <p>I love everything about you, your laughter that brightens my darkest days, for your patience when distance tests us, for your warmth that makes the world feel safe even through a screen. There will never be a thing in the world that can take your place in my heart, and I will always do my best to make you feel love even in the littlest ways possible, because you mean every little thing to me.</p>
+
+        <p>Today, I want to celebrate you the person who makes my heart beat faster, who inspires me to be better, who turns ordinary moments into memories I treasure. I may not be there to hold you close, but my heart is with you. Always. Every heartbeat whispers your name.</p>
+
+        <p>Thank you baby, for being yourself with me. This Valentine’s Day, know that I am sending all my love across the miles, wrapped in hugs, kisses, happy Valentine's day baby🫶🩵</p>
+
+        <p>I love you, more than words can ever fully express, and I always will.</p>
+
+        <p><strong>Forever yours,<br>Vince-</strong></p>
+
+        <div class="flower" onclick="bounceFlower(this)">🩵🌸</div>
+    </div>
+</div>
+
+<script>
+function surprise() {
+    document.getElementById("letter").style.display = "block";
+    createConfetti();
+    createHearts();
+    createBalloons();
+}
+
+function createConfetti() {
+    for (let i = 0; i < 40; i++) {
+        let confetti = document.createElement("div");
+        confetti.className = "confetti";
+        confetti.style.left = Math.random() * 100 + "vw";
+        confetti.style.backgroundColor = "white";
+        confetti.style.width = "8px";
+        confetti.style.height = "8px";
+        confetti.style.animationDuration = Math.random() * 3 + 2 + "s";
+        document.body.appendChild(confetti);
+        setTimeout(() => confetti.remove(), 5000);
+    }
+}
+
+function createHearts() {
+    for (let i = 0; i < 25; i++) {
+        let heart = document.createElement("div");
+        heart.className = "heart";
+        heart.innerHTML = "💙";
+        heart.style.left = Math.random() * 100 + "vw";
+        heart.style.fontSize = Math.random() * 20 + 20 + "px";
+        heart.style.animationDuration = Math.random() * 3 + 3 + "s";
+        document.body.appendChild(heart);
+        setTimeout(() => heart.remove(), 6000);
+    }
+}
+
+function createBalloons() {
+    for (let i = 0; i < 15; i++) {
+        let balloon = document.createElement("div");
+        balloon.className = "balloon";
+        balloon.innerHTML = "🎈";
+        balloon.style.left = Math.random() * 100 + "vw";
+        balloon.style.fontSize = "40px";
+        balloon.style.animationDuration = Math.random() * 4 + 4 + "s";
+        document.body.appendChild(balloon);
+        setTimeout(() => balloon.remove(), 7000);
+    }
+}
+
+function bounceFlower(element) {
+    element.classList.add("bounce");
+    setTimeout(() => element.classList.remove("bounce"), 1000);
+}
+</script>
+
+</body>
+</html>
